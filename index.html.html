@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohammad Abdullah | Personal Portfolio</title>
+<meta name="description" content="Personal biography and portfolio of Mohammad Abdullah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff;--ink:#111;--grey:#5f5f5f;--line:#e2e2e2;--red:#d7263d;--soft:#f3f3f3;box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0e0e0e;--ink:#f1f1f1;--grey:#a6a6a6;--line:#2b2b2b;--red:#ff4d63;--soft:#1a1a1a;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#0e0e0e;--ink:#f1f1f1;--grey:#a6a6a6;--line:#2b2b2b;--red:#ff4d63;--soft:#1a1a1a;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:130px}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;transition:background .3s,color .3s}
+h1,h2{font-family:'Playfair Display',Georgia,serif;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.col{max-width:780px;margin:auto;padding:0 22px}
+section{padding:56px 0 8px}
+.kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+h2{font-size:clamp(2rem,6vw,2.8rem);font-weight:900;margin-bottom:10px}
+.sub{color:var(--grey);margin-bottom:26px}
+.items{display:grid;gap:26px 30px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.item{border-top:3px solid var(--ink);padding-top:12px}
+.item h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.item p{color:var(--grey);font-size:.96rem}
+.btn{display:inline-block;padding:12px 28px;border-radius:999px;font:600 .95rem 'Poppins',sans-serif;border:2px solid var(--ink);background:none;color:var(--ink);cursor:pointer;transition:.2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--red);border-color:var(--red);color:#fff}
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.js .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
+.js .reveal.show{opacity:1;transform:none}
+header{position:sticky;top:0;z-index:50;background:#000;color:#fff;padding-top:env(safe-area-inset-top,0px)}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.wordmark{display:flex;flex-direction:column;align-items:center;line-height:1.2;text-transform:uppercase;text-align:center}
+.wordmark .a{font-size:clamp(.6rem,2.6vw,.8rem);letter-spacing:.5em;margin-right:-.5em}
+.wordmark .b{font-weight:700;font-size:clamp(1.05rem,4.6vw,1.5rem);letter-spacing:.22em;margin-right:-.22em}
+.wordmark i{display:inline-block;width:.4em;height:.4em;background:var(--red);border-radius:50%;margin-left:.3em}
+.sq{display:grid;place-items:center;width:42px;height:42px;border:2px solid #fff;border-radius:10px;background:none;color:#fff;cursor:pointer}
+[data-theme="light"] .i-sun,[data-theme="dark"] .i-moon{display:none}
+.strip{display:flex;gap:26px;overflow-x:auto;padding:0 18px;scrollbar-width:none;border-top:1px solid #222}
+.strip::-webkit-scrollbar{display:none}
+.strip a{flex:none;padding:11px 0;font-weight:600;font-size:.92rem;border-bottom:3px solid transparent;color:#ddd}
+.strip a.active,.strip a:hover{color:#fff;border-color:var(--red)}
+.menu{display:none;background:#000;padding:8px 22px 20px;border-top:1px solid #222}
+.menu.open{display:grid}
+.menu a{padding:10px 0;font-weight:600;border-bottom:1px solid #222}
+@media(min-width:800px){.strip{justify-content:center}.sq#menuBtn{visibility:hidden}}
+#home{padding-top:36px}
+.crumb{color:var(--grey);font-weight:500;font-size:.95rem;margin-bottom:22px}
+.name{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.n1{display:flex;align-items:center;gap:14px;font:600 clamp(.85rem,3.4vw,1.15rem)/1 'Poppins',sans-serif;letter-spacing:.5em;text-transform:uppercase;color:var(--red);animation:rise .9s .1s both}
+.n1::before{content:"";width:44px;height:2px;background:var(--red)}
+.n2{position:relative;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.7rem,12.6vw,6rem);letter-spacing:.02em;text-transform:uppercase;line-height:1.05;padding-bottom:18px;background:linear-gradient(100deg,var(--ink) 55%,var(--red));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:rise 1s .3s both}
+.n2::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--red);animation:draw 1s .9s forwards}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes draw{to{width:96px}}
+.motto{position:relative;margin:8px 0 28px;padding-top:20px;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.9rem,7.4vw,2.9rem);line-height:1.15;animation:rise 1s .5s both}
+.motto::before{content:"";position:absolute;top:0;left:0;width:56px;height:3px;background:var(--red)}
+.motto span{display:block}
+.m2{color:var(--red);padding-left:1.1em}
+.byline{font-weight:700;font-size:.9rem;text-transform:uppercase;margin-bottom:20px}
+.byline span{display:block}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+.pic{width:min(290px,76%);margin:22px auto 0;padding:8px;border:2px solid var(--red);background:var(--paper);box-shadow:0 16px 34px rgba(0,0,0,.14);animation:rise 1s .6s both}
+.pic img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.edu{display:grid;gap:18px}
+.ecard{display:grid;gap:4px;padding:22px;border:1px solid var(--line);border-left:4px solid var(--ink);transition:.25s}
+.ecard:hover{transform:translateY(-3px);border-left-color:var(--red)}
+.ecard.now{background:var(--soft);border-left-color:var(--red)}
+.etag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.ecard h3{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,4.6vw,1.8rem);line-height:1.2}
+.ecard p{color:var(--grey)}
+.statement{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:clamp(1.3rem,5vw,1.7rem);line-height:1.35;border-left:4px solid var(--red);padding-left:18px;margin-bottom:26px}
+.vibe{list-style:none;display:grid;gap:12px}
+.vibe li{display:flex;gap:14px;align-items:baseline;color:var(--grey);border-top:1px solid var(--line);padding-top:12px}
+.vibe b{color:var(--red);font-size:.78rem;letter-spacing:.1em}
+.socgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:10px 0}
+.soc{display:flex;align-items:center;gap:16px;background:#1c1c1c;color:#fff;padding:18px 22px;box-shadow:0 14px 26px rgba(0,0,0,.2);transition:transform .3s}
+.soc:hover{transform:translateY(-5px)}
+.soc svg{flex:none;width:34px;height:34px}
+.soc .sep{align-self:stretch;width:2px;background:#fff}
+.txt{min-width:0;display:grid}
+.nm{font-size:.9rem;letter-spacing:.05em;text-transform:uppercase}
+.un{font-size:.88rem;color:#b9b9b9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+footer{background:#000;color:#fff;text-align:center;padding:54px 22px 30px;margin-top:70px}
+footer q{display:block;color:#bbb;font-style:italic;margin:12px auto 0;max-width:46ch}
+footer small{display:block;margin-top:26px;color:#999}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}.n2::after{width:96px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <button class="sq" id="menuBtn" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <a href="#home" class="wordmark"><span class="a">Mohammad</span><span class="b">Abdullah<i></i></span></a>
+    <button class="sq" id="themeBtn" aria-label="Toggle dark or light mode"><svg class="i-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg><svg class="i-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+  </div>
+  <div class="menu" id="menu"><a href="#home">Home</a><a href="#about">About Me</a><a href="#education">Education</a><a href="#goals">Goals &amp; Future Plans</a><a href="#interests">Interests &amp; Hobbies</a><a href="#contact">Contact</a></div>
+  <nav class="strip"><a href="#home">Home</a><a href="#about">About</a><a href="#education">Education</a><a href="#goals">Goals</a><a href="#interests">Interests</a><a href="#contact">Contact</a></nav>
+</header>
+
+<main>
+<section id="home"><div class="col">
+  <div class="crumb">Personal Portfolio</div>
+  <h1 class="name"><span class="n1">Mohammad</span><span class="n2">Abdullah</span></h1>
+  <p class="motto"><span>Do Good,</span><span class="m2">Be Good</span></p>
+  <p class="byline">By Mohammad Abdullah <span>Born: <b>31 December 2007</b></span></p>
+  <div class="actions"><a href="#about" class="btn solid">About Me</a><button class="btn" id="shareBtn">Share ↗</button></div>
+</div>
+<figure class="col"><div class="pic"><img alt="Portrait of Mohammad Abdullah" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23d7263d'/%3E%3Ctext x='100' y='122' font-family='Georgia,serif' font-size='72' font-weight='700' fill='white' text-anchor='middle'%3EMA%3C/text%3E%3C/svg%3E"></div></figure>
+</section>
+
+<section id="about"><div class="col reveal">
+  <p class="kicker">About Me</p><h2>Hello, I’m Mohammad.</h2>
+  <p class="sub">A curious student who believes that kindness and good character matter as much as grades. I enjoy learning new things, building small projects and helping the people around me.</p>
+  <div class="items">
+    <div class="item"><h3>Who I am</h3><p>Born on 31 December 2007. Calm, hardworking and always eager to improve.</p></div>
+    <div class="item"><h3>What I value</h3><p>Honesty, discipline and kindness. My motto is simple: do good, be good.</p></div>
+    <div class="item"><h3>What drives me</h3><p>Turning ideas into real things, from a school project to a website like this one.</p></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="col reveal">
+  <p class="kicker">Education</p><h2>My Learning Journey</h2>
+  <div class="edu">
+    <div class="ecard now"><span class="etag">Current</span><h3>Your Current Institution</h3><p>Your class or program · Your years</p></div>
+    <div class="ecard"><span class="etag">Secondary</span><h3>Your School Name</h3><p>Your result or board · Year</p></div>
+  </div>
+</div></section>
+
+<section id="goals"><div class="col reveal">
+  <p class="kicker">Goals &amp; Future Plans</p><h2>Where I’m Heading</h2>
+  <p class="statement">To keep learning, build things that help people, and grow into someone my family is proud of.</p>
+  <div class="items">
+    <div class="item"><h3>Short term</h3><p>Do well in my studies and build strong skills.</p></div>
+    <div class="item"><h3>Long term</h3><p>Build a meaningful career and give back to my community.</p></div>
+  </div>
+</div></section>
+
+<section id="interests"><div class="col reveal">
+  <p class="kicker">Interests &amp; Hobbies</p><h2>Outside of Study</h2>
+  <ul class="vibe">
+    <li><b>01</b>Reading and learning new things</li>
+    <li><b>02</b>Technology and building websites</li>
+    <li><b>03</b>Spending time with family and friends</li>
+    <li><b>04</b>Sports and staying active</li>
+  </ul>
+</div></section>
+
+<section id="contact"><div class="col reveal">
+  <p class="kicker">Contact</p><h2>Let’s Connect</h2>
+  <p class="sub">I’d love to hear from you. Reach out on any of these.</p>
+  <div class="socgrid">
+    <a class="soc" href="mailto:you@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="sep"></span><span class="txt"><span class="nm">Email</span><span class="un">you@example.com</span></span></a>
+    <a class="soc" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="#fff"/></svg><span class="sep"></span><span class="txt"><span class="nm">Instagram</span><span class="un">@yourhandle</span></span></a>
+    <a class="soc" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M14 8h3V4h-3a4 4 0 00-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg><span class="sep"></span><span class="txt"><span class="nm">Facebook</span><span class="un">yourprofile</span></span></a>
+  </div>
+</div></section>
+</main>
+
+<footer>
+  <div class="wordmark"><span class="a">Mohammad</span><span class="b">Abdullah<i></i></span></div>
+  <q>Do good, be good.</q>
+  <small>© <span id="yr">2026</span> Mohammad Abdullah</small>
+</footer>
+
+<script>
+(function(){
+var d=document,r=d.documentElement;
+r.classList.add('js');
+d.getElementById('yr').textContent=new Date().getFullYear();
+var dark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
+r.dataset.theme=dark?'dark':'light';
+d.getElementById('themeBtn').onclick=function(){r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+var m=d.getElementById('menu');
+d.getElementById('menuBtn').onclick=function(){m.classList.toggle('open')};
+m.onclick=function(){m.classList.remove('open')};
+d.getElementById('shareBtn').onclick=function(){
+  var u=location.href;
+  if(navigator.share){navigator.share({title:d.title,url:u}).catch(function(){})}
+  else if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){alert('Link copied!')}).catch(function(){})}
+};
+var links=d.querySelectorAll('.strip a'),secs=d.querySelectorAll('main section');
+function setActive(id){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id)})}
+if('IntersectionObserver' in window){
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setActive(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){so.observe(s)});
+  var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');ro.unobserve(e.target)}})},{threshold:.12});
+  d.querySelectorAll('.reveal').forEach(function(x){ro.observe(x)});
+}else{d.querySelectorAll('.reveal').forEach(function(x){x.classList.add('show')})}
+setActive('home');
+})();
+</script>
+</body>
+</html>
